@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Movies: Codable {
+struct MoviesTLD: Decodable {
+    let results: [Movies]
+}
+
+
+struct Movies: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case title
@@ -20,5 +25,5 @@ struct Movies: Codable {
     let title: String
     let voteAverage: Double
     let overview: String
-    let image: String
+    let image: String?
 }
