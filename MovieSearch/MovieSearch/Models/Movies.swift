@@ -12,7 +12,6 @@ struct MoviesTLD: Decodable {
     let results: [Movies]
 }
 
-
 struct Movies: Decodable {
     
     private enum CodingKeys: String, CodingKey {

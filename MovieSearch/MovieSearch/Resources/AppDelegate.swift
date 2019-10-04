@@ -15,12 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MovieController.getMoviesWith(searchText: "Star+Trek") { (movies) in
-            guard let movieImage = movies[0].image else { return }
-            MovieController.getImagefor(imageURL: movieImage, completion: { (image) in
-                print(image)
-            })
-        }
         return true
     }
 

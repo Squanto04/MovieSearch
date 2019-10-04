@@ -32,7 +32,6 @@ class MovieController {
         let searchQuery = URLQueryItem(name: StringConstants.queryTerm, value: searchText)
         components.queryItems = [apiQuery, searchQuery]
         guard let finalURL = components.url else { return }
-        print(finalURL)
         
         let dataTask = URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {
@@ -56,8 +55,6 @@ class MovieController {
         // Goal URL: http://image.tmdb.org/t/p/w200/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg
         guard var newImageURL = StringConstants.imageBaseURL else { return }
         newImageURL.appendPathComponent(imageURL)
-        print(newImageURL)
-        
         let dataTask = URLSession.shared.dataTask(with: newImageURL) { (data, _, error) in
             if let error = error {
                 print("There was an error decoding image: \(error.localizedDescription)")
@@ -73,5 +70,4 @@ class MovieController {
         }
         dataTask.resume()
     }
-    
 }
